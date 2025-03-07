@@ -91,12 +91,12 @@ export const Section1 = () => {
         <div className="z-50 flex h-full w-[80vw] flex-col justify-between pt-[4vw] md:w-[60%]">
           <div className="flex w-full flex-col">
             <p
-              className="font-avigea text-5xl text-black md:text-[8vw]"
+              className="font-avigea text-5xl text-black md:text-[6vw]"
               style={{ lineHeight: 1 }}
             >
-              Hello I&apos;m
+              Every Transaction
               <br />
-              sleuthi
+              Tells a Story.
             </p>
             <p
               className="mb-[2vw] w-[80%] font-inter text-xs text-black md:text-[1.5vw]"
