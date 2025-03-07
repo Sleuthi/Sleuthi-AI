@@ -41,10 +41,12 @@ export const Section2 = () => {
     id,
     title,
     subtitle,
+    assetSrc,
   }: {
     id: number;
     title: string;
     subtitle: string;
+    assetSrc: string;
   }) => (
     <div
       className={cn(
@@ -53,7 +55,7 @@ export const Section2 = () => {
       )}
     >
       <Image
-        src={getAssetPath("item", id)}
+        src={assetSrc}
         width={480}
         height={480}
         alt=""
@@ -83,10 +85,12 @@ export const Section2 = () => {
     id,
     title,
     subtitle,
+    assetSrc,
   }: {
     id: number;
     title: string;
     subtitle: string;
+    assetSrc: string;
   }) => (
     <div
       className={cn(
@@ -95,7 +99,7 @@ export const Section2 = () => {
       )}
     >
       <Image
-        src={getAssetPath("item", id)}
+        src={assetSrc}
         width={480}
         height={480}
         alt=""
@@ -157,18 +161,21 @@ export const Section2 = () => {
           <ServiceCard
             key={1}
             id={1}
+            assetSrc="/assets/homepage/section-2/item-1.png"
             title="ADAPTIVE NEURAL PERSONALITY"
             subtitle="Sleuthi intuitively adapts to user behavior, blending sharp market analysis, strategic insights, and a touch of playful wit."
           />
           <ServiceCard
             key={2}
             id={2}
+            assetSrc="/assets/homepage/section-2/item-2.png"
             title="ELITE MARKET INTELLIGENCE"
             subtitle="Sleuthi delivers real-time, data-driven market insights, empowering precise and confident trading decisions."
           />
           <ServiceCard
             key={3}
             id={3}
+            assetSrc="/assets/homepage/section-2/item-3.png"
             title="DYNAMIC TICKER DATA AGGREGATION"
             subtitle="Sleuthi compiles data from top-tier sources. X, Discord Aloha, and leading Telegram bots."
           />
@@ -178,12 +185,14 @@ export const Section2 = () => {
           <ServiceCard2
             key={4}
             id={4}
+            assetSrc="/assets/homepage/section-2/item-4.png"
             title="RETROSPECTIVE TRADE ANALYSIS"
             subtitle="Sleuthi deciphers blockchain data to pinpoint trading missteps, assess performance, and refine strategies with accuracy."
           />
           <ServiceCard2
             key={5}
             id={5}
+            assetSrc="/assets/homepage/section-2/item-5.png"
             title="REKT & FUMBLE QUANT"
             subtitle="Sleuthi analyzes blockchain patterns to uncover mistakes, mitigate risks, and optimize future trades with precision."
           />

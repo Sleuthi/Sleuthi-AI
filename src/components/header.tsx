@@ -19,7 +19,7 @@ export const navigations: NavigationItem[] = [
   },
   {
     title: "Docs",
-    link: "/docs",
+    link: "https://docs.sleuthi.com/",
   },
   {
     title: "Chatbot",
@@ -50,9 +50,14 @@ export const Header = () => {
         <div className="flex items-center gap-[3vw]">
           {navigations.map((navigation, index) => {
             const isActive = pathname === navigation.link;
+            const isDocs = navigation.title === "Docs";
 
             return (
-              <Link key={index} href={navigation.link}>
+              <Link
+                key={index}
+                href={navigation.link}
+                target={isDocs ? "_blank" : undefined}
+              >
                 <p
                   className={cn(
                     "text-xs text-black md:text-[1vw]",
@@ -71,7 +76,7 @@ export const Header = () => {
               width={480}
               height={480}
               alt=""
-              className="h-auto w-[20vw] md:w-[10vw] hover:animate-shake"
+              className="h-auto w-[20vw] hover:animate-shake md:w-[10vw]"
             />
           </Link>
         </div>
