@@ -190,14 +190,14 @@ export default function ChatList({
     <div className="h-[calc(100%-200px)] w-full md:h-[calc(100%-12vw)]">
       <div className="h-full w-full overflow-y-hidden">
         <div className="h-full overflow-y-auto px-4 pb-[4vw] md:px-[1.6vw]">
-          <div className="flex flex-col gap-2 pt-4 pb-8 md:gap-[1.2vw] md:pt-[1.6vw] md:pb-[3.5vw]">
+          <div className="flex flex-col gap-2 pb-8 pt-4 md:gap-[1.2vw] md:pb-[8vw] md:pt-[1.6vw]">
             {messages?.map((item, index) => (
               <Fragment key={index}>
                 <ChatItem item={item} isPending={isPending} />
                 {item?.role === "apiMessage" &&
                   index === 0 &&
                   walletAddress && (
-                    <div className="flex max-w-full flex-col gap-2 ">
+                    <div className="flex max-w-full flex-col gap-2 md:gap-[1.2vw]">
                       {FAQ_OPTIONS?.map((option, idx) => (
                         <button
                           className={cn(

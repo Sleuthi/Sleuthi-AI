@@ -43,7 +43,7 @@ export default function ChatItem({ item, isPending }: ChatItemProps) {
             <ReactMarkdown
               remarkPlugins={[gfm]}
               className={cn(
-                "prose font-sora max-w-none text-sm leading-7 text-black md:text-[1.2vw] [&_strong]:text-black",
+                "prose font-sora max-w-none text-sm leading-4 text-black md:text-[1.2vw] md:leading-[1.4vw] [&_strong]:text-black",
                 item?.error && "text-red-600",
               )}
               components={{
@@ -81,7 +81,7 @@ export default function ChatItem({ item, isPending }: ChatItemProps) {
         >
           <ReactMarkdown
             className={cn(
-              "prose font-sora max-w-none text-sm leading-7 text-black md:text-[1.2vw] [&_strong]:text-black",
+              "prose font-sora max-w-none text-sm leading-4 text-black md:text-[1.2vw] md:leading-[1.4vw] [&_strong]:text-black",
               item?.error && "text-red-600",
             )}
             components={{
