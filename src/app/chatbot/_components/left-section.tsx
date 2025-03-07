@@ -130,10 +130,10 @@ export default function LeftSection({ walletAddress }: LeftSectionProps) {
                   className="font-avigea text-[6vw] text-black"
                   style={{ lineHeight: 1 }}
                 >
-                  Dr. {character.name}
+                  {character.name}
                 </p>
               </div>
-              <div className="flex items-center">
+              <div className="z-50 flex items-center">
                 <div
                   className={cn(
                     "rounded-full border-[0.2vw] border-black px-[1.6vw] py-[0.8vw] transition-all hover:opacity-50",

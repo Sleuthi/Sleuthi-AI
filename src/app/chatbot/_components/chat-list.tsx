@@ -11,6 +11,7 @@ import {
   useTransition,
 } from "react";
 import ChatItem from "./chat-item";
+import { useCharacterStore } from "@/store/character-store";
 
 interface ChatListProps {
   walletAddress: string;
@@ -31,6 +32,7 @@ export default function ChatList({
   setIsLoadingChat,
 }: ChatListProps) {
   const firstAskQuestionResponse = use(firstAskQuestion);
+  const { character } = useCharacterStore();
 
   const inputRef = useRef<HTMLInputElement | null>(null);
   const finishRef = useRef<HTMLDivElement | null>(null);
@@ -85,7 +87,7 @@ export default function ChatList({
           },
           body: JSON.stringify({
             question: messageToSubmit,
-            character: localStorage.getItem("currentChar") + "_Blade",
+            character: character.name,
             walletAddress,
             sessionId: firstAskQuestionResponse.sessionId,
             history: messages.slice(-4).map((message) => ({
