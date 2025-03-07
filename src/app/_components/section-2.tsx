@@ -168,14 +168,14 @@ export const Section2 = () => {
             id={2}
             assetSrc="/assets/homepage/section-2/item-2.png"
             title="ELITE MARKET INTELLIGENCE"
-            subtitle="Sleuthi delivers real-time, data-driven market insights, empowering precise and confident trading decisions."
+            subtitle="Sleuthi delivers real time, data driven market insights, empowering precise and confident trading decisions."
           />
           <ServiceCard
             key={3}
             id={3}
             assetSrc="/assets/homepage/section-2/item-3.png"
             title="DYNAMIC TICKER DATA AGGREGATION"
-            subtitle="Sleuthi compiles data from top-tier sources. X, Discord Aloha, and leading Telegram bots."
+            subtitle="Sleuthi compiles data from top-tier sources. X, Discord Alpha, and leading Telegram bots."
           />
         </div>
 
