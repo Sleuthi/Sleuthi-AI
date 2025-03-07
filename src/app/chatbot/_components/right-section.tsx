@@ -1,6 +1,5 @@
 "use client";
 
-import { QUICK_CHAT_OPTIONS } from "@/data/config";
 import { WalletAddressRequestSchema } from "@/data/schemas/dto";
 import { cn, formatZodError } from "@/lib/utils";
 import {
@@ -246,36 +245,6 @@ export default function RightSection({
         setIsLoadingChat={setIsLoadingChat}
       />
       <div className="absolute bottom-0 left-0 z-20 w-full">
-        {walletAddress && (
-          <div
-            className="w-full overflow-x-auto px-4"
-            style={{ scrollbarWidth: "none" }}
-          >
-            <div className="flex gap-2">
-              {QUICK_CHAT_OPTIONS?.map((item, index) => (
-                <div
-                  className={cn(
-                    index === QUICK_CHAT_OPTIONS.length - 1 && "pr-4",
-                  )}
-                  key={index}
-                >
-                  <button
-                    className={cn(
-                      "rounded-full border border-black px-2 py-2 transition-all hover:brightness-75 md:px-[1.6vw] md:py-[0.6vw]",
-                      headerBgColor[character.name],
-                    )}
-                    disabled={isLoadingChat}
-                    onClick={() => setQuickSelect(item)}
-                  >
-                    <p className="font-sora max-w-none text-nowrap text-left text-sm leading-7 text-black md:text-[1.2vw]">
-                      {item}
-                    </p>
-                  </button>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -288,14 +257,14 @@ export default function RightSection({
           <input
             type="text"
             placeholder="ask me anything..."
-            className="form- w-full rounded-full bg-[#F7F6F2] px-4 py-2.5 text-sm placeholder:text-black focus:outline-none disabled:cursor-not-allowed disabled:opacity-25 md:w-[calc(100%-4vw)] md:px-[2vw] md:py-[1.2vw] md:text-[1.2vw]"
+            className="form- w-full rounded-full bg-[#F7F6F2] px-4 py-2.5 text-sm placeholder:text-black focus:outline-none disabled:opacity-75 md:w-[calc(100%-4vw)] md:px-[2vw] md:py-[1.2vw] md:text-[1.2vw]"
             disabled={!walletAddress || isLoadingChat}
             value={inputMessage}
             onChange={(e) => setInputMessage(e.target.value)}
           />
           <button
             type="submit"
-            className="group flex min-h-10 min-w-10 items-center justify-center rounded-full border border-[#FFFFFF]/25 bg-gradient-to-b from-[#0D0D0D] to-[#1F1F1F] transition-all hover:opacity-50 disabled:cursor-not-allowed disabled:opacity-25 md:h-[4vw] md:w-[4vw]"
+            className="group flex min-h-10 min-w-10 items-center justify-center rounded-full border border-[#FFFFFF]/25 bg-gradient-to-b from-[#0D0D0D] to-[#1F1F1F] transition-all hover:opacity-50 disabled:opacity-75 md:h-[4vw] md:w-[4vw]"
             disabled={!walletAddress || isLoadingChat}
           >
             <ArrowBigUpIcon className="h-4 w-auto text-white transition-all group-hover:rotate-90 md:h-[1.6vw]" />

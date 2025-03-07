@@ -65,7 +65,7 @@ export const Header = () => {
             );
           })}
 
-          <Link href={buyUrl || ""} target="_blank">
+          <Link href={buyUrl || ""}>
             <Image
               src={buyButton[character.name]}
               width={480}

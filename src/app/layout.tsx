@@ -79,8 +79,7 @@ export default async function RootLayout({
           )}
         >
           <Providers config={configs?.[0] || null}>
-            {/* <Loading>{children}</Loading> */}
-            {children}
+            <Loading>{children}</Loading>
           </Providers>
         </body>
       </html>

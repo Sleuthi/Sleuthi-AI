@@ -37,18 +37,10 @@ export const Section2 = () => {
     return colors[type][character.name] || colors[type][hawk.name];
   };
 
-  const ServiceCard = ({
-    id,
-    title,
-    subtitle,
-  }: {
-    id: number;
-    title: string;
-    subtitle: string;
-  }) => (
+  const ServiceCard = ({ id }: { id: number }) => (
     <div
       className={cn(
-        "flex h-full flex-row items-center rounded-3xl border-[0.25vw] border-black px-[4vw] py-[3vw] md:flex-col md:justify-between md:px-[2vw] md:py-[1.5vw]",
+        "flex h-full flex-row items-center rounded-3xl border-[0.25vw] border-black px-[4vw] py-[3vw] md:px-[2vw] md:py-[1.5vw] md:flex-col",
         getBgColor("card"),
       )}
     >
@@ -57,37 +49,29 @@ export const Section2 = () => {
         width={480}
         height={480}
         alt=""
-        className="mb-[2vw] mr-[4vw] h-auto w-[15vw] md:mr-0"
+        className="mb-[2vw] h-auto w-[15vw] md:mr-0 mr-[4vw]"
         priority
       />
 
       <div className="flex w-full flex-col">
         <p
-          className="mb-[1vw] font-avigea text-lg text-black md:text-center md:text-[2vw]"
+          className="mb-[1vw] md:text-center font-avigea text-lg md:text-[2vw] text-black"
           style={{ lineHeight: 1 }}
         >
-          {title}
+          DYNAMIC TICKER DATA AGGREGATION
         </p>
 
         <p
-          className="font-inter text-[8px] text-black md:text-center md:text-[1vw]"
+          className="md:text-center font-inter text-[8px] md:text-[1vw] text-black"
           style={{ lineHeight: 1 }}
         >
-          {subtitle}
+          Blade distills the strategies of the top 100 elite traders into
         </p>
       </div>
     </div>
   );
 
-  const ServiceCard2 = ({
-    id,
-    title,
-    subtitle,
-  }: {
-    id: number;
-    title: string;
-    subtitle: string;
-  }) => (
+  const ServiceCard2 = ({ id }: { id: number }) => (
     <div
       className={cn(
         "flex h-full items-center rounded-3xl border-[0.25vw] border-black px-[4vw] py-[3vw] md:px-[2vw] md:py-[1.5vw]",
@@ -108,14 +92,14 @@ export const Section2 = () => {
           className="mb-[2vw] font-avigea text-lg text-black md:text-[2vw]"
           style={{ lineHeight: 1 }}
         >
-          {title}
+          DYNAMIC TICKER DATA AGGREGATION
         </p>
 
         <p
           className="font-inter text-[8px] text-black md:text-[1vw]"
           style={{ lineHeight: 1 }}
         >
-          {subtitle}
+          Blade distills the strategies of the top 100 elite traders into
         </p>
       </div>
     </div>
@@ -154,39 +138,15 @@ export const Section2 = () => {
         </div>
 
         <div className="-mt-[14vw] mb-[2vw] grid w-[80vw] grid-cols-1 gap-x-[2vw] gap-y-[2vw] md:grid-cols-3">
-          <ServiceCard
-            key={1}
-            id={1}
-            title="ADAPTIVE NEURAL PERSONALITY"
-            subtitle="Sleuthi intuitively adapts to user behavior, blending sharp market analysis, strategic insights, and a touch of playful wit."
-          />
-          <ServiceCard
-            key={2}
-            id={2}
-            title="ELITE MARKET INTELLIGENCE"
-            subtitle="Sleuthi delivers real-time, data-driven market insights, empowering precise and confident trading decisions."
-          />
-          <ServiceCard
-            key={3}
-            id={3}
-            title="DYNAMIC TICKER DATA AGGREGATION"
-            subtitle="Sleuthi compiles data from top-tier sources. X, Discord Aloha, and leading Telegram bots."
-          />
+          {[1, 2, 3].map((id) => (
+            <ServiceCard key={id} id={id} />
+          ))}
         </div>
 
         <div className="grid w-[80vw] grid-cols-1 gap-x-[2vw] gap-y-[2vw] md:grid-cols-2">
-          <ServiceCard2
-            key={4}
-            id={4}
-            title="RETROSPECTIVE TRADE ANALYSIS"
-            subtitle="Sleuthi deciphers blockchain data to pinpoint trading missteps, assess performance, and refine strategies with accuracy."
-          />
-          <ServiceCard2
-            key={5}
-            id={5}
-            title="REKT & FUMBLE QUANT"
-            subtitle="Sleuthi analyzes blockchain patterns to uncover mistakes, mitigate risks, and optimize future trades with precision."
-          />
+          {[4, 5].map((id) => (
+            <ServiceCard2 key={id} id={id} />
+          ))}
         </div>
       </div>
     </section>

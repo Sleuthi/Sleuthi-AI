@@ -1,18 +1,18 @@
 export const CHARACTERS = [
   {
     theme: "dark",
-    id: "Good_Blade",
-    name: "Good_Blade",
+    id: "Hawk",
+    name: "Hawk",
   },
   {
     theme: "dark",
-    id: "Evil_Blade",
-    name: "Evil_Blade",
+    id: "Choco",
+    name: "Choco",
   },
   {
     theme: "light",
-    id: "Wise_Blade",
-    name: "Wise_Blade",
+    id: "River",
+    name: "River",
   },
 ] as const;
 

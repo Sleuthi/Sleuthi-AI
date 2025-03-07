@@ -12,13 +12,12 @@ export const POST = async (req: Request) => {
   const { question, character, walletAddress, sessionId, history } =
     AskQuestionRequestSchema.parse(await req.json());
 
-  console.log(question, character, walletAddress, sessionId, history)
   await checkRateLimit(walletAddress, 10, "1 m", "chat_ask");
 
  
   console.log("Post 2")
   const characterName = CHARACTERS.find((c) => c.id === character)?.name;
-  console.log("Post 3")
+  
   const client = new FlowiseClient({
     baseUrl: env.AI_API_URL,
     apiKey: env.AI_API_KEY,
@@ -37,7 +36,8 @@ export const POST = async (req: Request) => {
     .join(", ");
   console.log("Post 3")
   console.log(historyString)
-
+  console.log("Chat" + characterName)
+  
   const intentRecognizerPrediction = (await client.createPrediction({
     chatflowId: CHATFLOW_MAPPING.INTENT_RECOGNIZER,
     question,
