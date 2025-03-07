@@ -11,7 +11,15 @@ import {
   useTransition,
 } from "react";
 import ChatItem from "./chat-item";
-import { useCharacterStore } from "@/store/character-store";
+import { choco, hawk, river, useCharacterStore } from "@/store/character-store";
+import { FAQ_OPTIONS } from "@/data/config";
+import { cn } from "@/lib/utils";
+
+const chatBgColor = {
+  [hawk.name]: "bg-[#FFAFEC]",
+  [choco.name]: "bg-[#5DD9C1]",
+  [river.name]: "bg-[#FFC75F]",
+};
 
 interface ChatListProps {
   walletAddress: string;
@@ -186,6 +194,27 @@ export default function ChatList({
             {messages?.map((item, index) => (
               <Fragment key={index}>
                 <ChatItem item={item} isPending={isPending} />
+                {item?.role === "apiMessage" &&
+                  index === 0 &&
+                  walletAddress && (
+                    <div className="flex max-w-full flex-col gap-2">
+                      {FAQ_OPTIONS?.map((option, idx) => (
+                        <button
+                          className={cn(
+                            "rounded-full border border-black bg-transparent px-2 py-2 transition-all hover:brightness-75 md:max-w-[80%] md:px-[1.6vw] md:py-[0.6vw]",
+                            chatBgColor[character.name],
+                          )}
+                          onClick={() => setQuickSelect(option)}
+                          disabled={isPending}
+                          key={idx}
+                        >
+                          <p className="font-sora max-w-none text-wrap text-left text-sm leading-7 text-black md:text-[1.2vw]">
+                            {option}
+                          </p>
+                        </button>
+                      ))}
+                    </div>
+                  )}
               </Fragment>
             ))}
           </div>
