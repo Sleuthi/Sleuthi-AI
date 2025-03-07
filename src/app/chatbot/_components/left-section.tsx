@@ -63,6 +63,12 @@ interface LeftSectionProps {
 export default function LeftSection({ walletAddress }: LeftSectionProps) {
   const { character } = useCharacterStore();
 
+  const bgChat = {
+    [hawk.name]: "/assets/characters/btn-chat-hawk.png",
+    [choco.name]: "/assets/characters/btn-chat-choco.png",
+    [river.name]: "/assets/characters/btn-chat-river.png",
+  };
+
   const getTransition = () =>
     characterTransitions[character.name] || defaultTransition;
 
@@ -134,14 +140,21 @@ export default function LeftSection({ walletAddress }: LeftSectionProps) {
                 </p>
               </div>
               <div className="z-50 flex items-center">
-                <div
+                <Image
+                  src={bgChat[character.name]}
+                  width={480}
+                  height={480}
+                  alt=""
+                  className="h-auto w-[10vw] transition-all hover:opacity-50"
+                />
+                {/* <div
                   className={cn(
                     "rounded-full border-[0.2vw] border-black px-[1.6vw] py-[0.8vw] transition-all hover:opacity-50",
                     charBgColor[character.name],
                   )}
                 >
                   <p className="font-inter text-[1.2vw] text-black">{`Chat ${character.name}`}</p>
-                </div>
+                </div> */}
                 <div className="w-[1.6vw] border-[0.2vw] border-b border-black" />
                 <button
                   className="transition-all hover:scale-125"

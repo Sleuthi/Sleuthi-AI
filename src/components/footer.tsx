@@ -25,11 +25,12 @@ export const Footer = () => {
       <div
         className={cn(
           "flex h-full w-[90vw] items-center overflow-hidden rounded-3xl py-[0.5vw] pl-[4vw] md:pl-1",
-          {
-            "bg-[#FFAFEC]": character.name === hawk.name,
-            "bg-[#5DD9C1]": character.name === choco.name,
-            "bg-[#FFC75F]": character.name === river.name,
-          },
+          // {
+          //   "bg-[#FFAFEC]": character.name === hawk.name,
+          //   "bg-[#5DD9C1]": character.name === choco.name,
+          //   "bg-[#FFC75F]": character.name === river.name,
+          // },
+          "bg-[url('/assets/homepage/footer/bg.png')] bg-cover bg-center"
         )}
       >
         <Image
@@ -41,7 +42,7 @@ export const Footer = () => {
         />
 
         <div className="mr-[8vw] flex h-full w-min flex-col justify-center md:mr-[3vw]">
-          <div className="flex w-full items-center gap-[2vw] mb-[1vw]">
+          <div className="mb-[1vw] flex w-full items-center gap-[2vw]">
             <p
               className="font-inter text-lg font-bold text-black md:text-[3vw]"
               style={{ lineHeight: 1 }}
@@ -54,12 +55,17 @@ export const Footer = () => {
           <div className="mb-[2vw] flex gap-[3vw]">
             {navigations.map((navigation, index) => {
               const isActive = pathname === navigation.link;
+              const isDocs = navigation.title === "Docs";
 
               return (
-                <Link key={index} href={navigation.link}>
+                <Link
+                  key={index}
+                  href={navigation.link}
+                  target={isDocs ? "_blank" : undefined}
+                >
                   <p
                     className={cn(
-                      "text-[8px] md:text-[1.5vw] text-black",
+                      "text-[8px] text-black md:text-[1.5vw]",
                       isActive ? "font-bold" : "font-normal",
                     )}
                   >
@@ -76,20 +82,20 @@ export const Footer = () => {
               width={480}
               height={480}
               alt=""
-              className="h-auto w-[8vw] md:w-[4vw] hover:animate-shake"
+              className="h-auto w-[8vw] hover:animate-shake md:w-[4vw]"
               priority
             />
           </Link>
         </div>
 
-        <Image
+        {/* <Image
           src={"/assets/homepage/footer/paw.png"}
           width={800}
           height={800}
           alt=""
           className="mr-[2vw] h-auto w-full"
           priority
-        />
+        /> */}
       </div>
     </footer>
   );
