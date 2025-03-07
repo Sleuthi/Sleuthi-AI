@@ -142,9 +142,7 @@ export const Section2 = () => {
               className="mt-[3vw] text-center font-avigea text-[5vw] text-black"
               style={{ lineHeight: 1 }}
             >
-              Our Tech
-              <br />
-              Services
+              Tech Services
             </p>
           </div>
 

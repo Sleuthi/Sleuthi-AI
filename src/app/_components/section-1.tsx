@@ -60,12 +60,9 @@ export const Section1 = () => {
   };
 
   const heroGreeting = {
-    [hawk.name]:
-      "I'm Hawk Precise fast and ruthless No fluff just pure market intelligence Ask wisely",
-    [choco.name]:
-      "Hey I'm Choco Let's talk markets like old friends No stress just smart moves What's on your mind",
-    [river.name]:
-      "I'm River Markets flow no need to rush Stay chill read the waves and trade smooth What's up",
+    [hawk.name]: "Move fast. Move precise. I'm Hawk.",
+    [choco.name]: "Gm, I'm Choco, What's on your mind?",
+    [river.name]: "Sup, name's River!",
   };
 
   return (
