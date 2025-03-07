@@ -11,7 +11,15 @@ import {
   useTransition,
 } from "react";
 import ChatItem from "./chat-item";
-import { useCharacterStore } from "@/store/character-store";
+import { choco, hawk, river, useCharacterStore } from "@/store/character-store";
+import { FAQ_OPTIONS } from "@/data/config";
+import { cn } from "@/lib/utils";
+
+const chatBgColor = {
+  [hawk.name]: "bg-[#FFAFEC]",
+  [choco.name]: "bg-[#5DD9C1]",
+  [river.name]: "bg-[#FFC75F]",
+};
 
 interface ChatListProps {
   walletAddress: string;
@@ -182,10 +190,31 @@ export default function ChatList({
     <div className="h-[calc(100%-200px)] w-full md:h-[calc(100%-12vw)]">
       <div className="h-full w-full overflow-y-hidden">
         <div className="h-full overflow-y-auto px-4 pb-[4vw] md:px-[1.6vw]">
-          <div className="flex flex-col gap-2 py-4 md:gap-[1.2vw] md:py-[1.6vw]">
+          <div className="flex flex-col gap-2 pb-8 pt-4 md:gap-[1.2vw] md:pb-[8vw] md:pt-[1.6vw]">
             {messages?.map((item, index) => (
               <Fragment key={index}>
                 <ChatItem item={item} isPending={isPending} />
+                {item?.role === "apiMessage" &&
+                  index === 0 &&
+                  walletAddress && (
+                    <div className="flex max-w-full flex-col gap-2 md:gap-[1.2vw]">
+                      {FAQ_OPTIONS?.map((option, idx) => (
+                        <button
+                          className={cn(
+                            "rounded-full border border-black bg-transparent px-2 py-2 transition-all hover:brightness-75 md:max-w-[80%] md:px-[1.6vw] md:py-[0.6vw]",
+                            chatBgColor[character.name],
+                          )}
+                          onClick={() => setQuickSelect(option)}
+                          disabled={isPending}
+                          key={idx}
+                        >
+                          <p className="font-sora max-w-none text-wrap text-left text-sm leading-7 text-black md:text-[1.2vw]">
+                            {option}
+                          </p>
+                        </button>
+                      ))}
+                    </div>
+                  )}
               </Fragment>
             ))}
           </div>

@@ -59,9 +59,22 @@ export const Section1 = () => {
     [river.name]: "/assets/characters/river.gif",
   };
 
+  const heroGreeting = {
+    [hawk.name]:
+      "I'm Hawk Precise fast and ruthless No fluff just pure market intelligence Ask wisely",
+    [choco.name]:
+      "Hey I'm Choco Let's talk markets like old friends No stress just smart moves What's on your mind",
+    [river.name]:
+      "I'm River Markets flow no need to rush Stay chill read the waves and trade smooth What's up",
+  };
+
   return (
-    <section className={cn(`flex h-full w-full justify-center py-[10%] overflow-hidden`)}>
-      <div className="relative flex md:flex-row items-center flex-col h-full w-[90vw]">
+    <section
+      className={cn(
+        `flex h-full w-full justify-center overflow-hidden py-[10%]`,
+      )}
+    >
+      <div className="relative flex h-full w-[90vw] flex-col items-center md:flex-row">
         <p className="absolute -left-[2.5vw] -top-[2vw] -rotate-[25deg] font-arkipelago text-[3vw] text-black">
           Whats up...
         </p>
@@ -71,26 +84,25 @@ export const Section1 = () => {
           width={480}
           height={480}
           alt=""
-          className="absolute -right-[3.5vw] -top-[3vw] h-auto w-[8vw] md:block hidden"
+          className="absolute -right-[3.5vw] -top-[3vw] hidden h-auto w-[8vw] md:block"
           priority
         />
 
-        <div className="flex h-full w-[80vw] md:w-[60%] flex-col justify-between pt-[4vw] z-50">
+        <div className="z-50 flex h-full w-[80vw] flex-col justify-between pt-[4vw] md:w-[60%]">
           <div className="flex w-full flex-col">
             <p
-              className="font-avigea text-5xl md:text-[8vw] text-black"
+              className="font-avigea text-5xl text-black md:text-[6vw]"
               style={{ lineHeight: 1 }}
             >
-              Hello I&apos;m
+              Every Transaction
               <br />
-              sleuthi
+              Tells a Story.
             </p>
             <p
-              className="w-[80%] font-inter text-xs mb-[2vw] md:text-[1.5vw] text-black"
+              className="mb-[2vw] w-[80%] font-inter text-xs text-black md:text-[1.5vw]"
               style={{ lineHeight: 1.2 }}
             >
-              {`Hey, I'm ${character.name}! Your friendly AI assistant, ready to fetch
-            info with a smile! Let's get chatting!`}
+              {heroGreeting[character.name]}
             </p>
           </div>
 
@@ -126,13 +138,13 @@ export const Section1 = () => {
           </div>
         </div>
 
-        <div className="h-full w-[40%] md:mt-0 mt-[5vh] z-40">
+        <div className="z-40 mt-[5vh] h-full w-[40%] md:mt-0">
           <Image
             src={heroAsset[character.name]}
             width={480}
             height={480}
             alt=""
-            className="-mt-[4vw] h-auto w-full md:scale-150 scale-[3]"
+            className="-mt-[4vw] h-auto w-full scale-[3] md:scale-150"
             priority
           />
         </div>

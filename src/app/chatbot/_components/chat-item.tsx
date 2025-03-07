@@ -38,13 +38,12 @@ export default function ChatItem({ item, isPending }: ChatItemProps) {
           )}
         >
           <motion.div
-            className="text-sm text-black md:text-[1.2vw]"
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
           >
             <ReactMarkdown
               remarkPlugins={[gfm]}
               className={cn(
-                "prose font-sora max-w-none text-sm text-black md:text-[1.2vw] [&_strong]:text-black",
+                "prose font-sora max-w-none text-sm leading-4 text-black md:text-[1.2vw] md:leading-[1.4vw] [&_strong]:text-black",
                 item?.error && "text-red-600",
               )}
               components={{
@@ -78,12 +77,11 @@ export default function ChatItem({ item, isPending }: ChatItemProps) {
         )}
       >
         <motion.div
-          className="text-sm text-black md:text-[1.2vw]"
           transition={{ type: "spring", stiffness: 400, damping: 25 }}
         >
           <ReactMarkdown
             className={cn(
-              "prose font-sora max-w-none text-sm text-black md:text-[1.2vw] [&_strong]:text-black",
+              "prose font-sora max-w-none text-sm leading-4 text-black md:text-[1.2vw] md:leading-[1.4vw] [&_strong]:text-black",
               item?.error && "text-red-600",
             )}
             components={{
