@@ -121,13 +121,13 @@ export default function LeftSection({ walletAddress }: LeftSectionProps) {
         >
           <div className="h-full w-full">
             <div className="flex h-full w-full flex-col items-center justify-center">
-              <div className="mb-[4vw]">
+              <div className="mb-[-4vw]">
                 <Image
                   src={heroAsset[character.name]}
                   width={480}
                   height={480}
                   alt=""
-                  className="-mt-[4vw] h-auto w-full scale-[1.6]"
+                  className="-mt-[4vw] h-auto w-[48vw] scale-[1.6vw]"
                   priority
                 />
               </div>
