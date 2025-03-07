@@ -10,7 +10,7 @@ const buyUrl = useConfig()((state) => state.config.buy_url);
 
 .
 .
-
+.
 
 
 
