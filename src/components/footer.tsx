@@ -70,7 +70,7 @@ export const Footer = () => {
             })}
           </div>
 
-          <Link href={xCoinUrl || ""}>
+          <Link href={xCoinUrl || ""} target="_blank">
             <Image
               src={"/assets/homepage/footer/btn-x.png"}
               width={480}
