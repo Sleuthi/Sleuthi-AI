@@ -59,6 +59,8 @@ export const POST = async (req: Request) => {
     return new NextResponse(`Intent: ${intent} not found`, { status: 400 });
   }
 
+
+
   const prediction = await client.createPrediction({
     chatflowId: CHATFLOW_MAPPING[intent],
     question,
