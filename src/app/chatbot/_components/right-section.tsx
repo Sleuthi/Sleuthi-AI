@@ -118,12 +118,6 @@ export default function RightSection({
     window.location.href = `/chatbot?character=${character.name}`;
   };
 
-  const bgChat = {
-    [hawk.name]: "/assets/characters/btn-chat-hawk.png",
-    [choco.name]: "/assets/characters/btn-chat-choco.png",
-    [river.name]: "/assets/characters/btn-chat-river.png",
-  };
-
   const getTransition = () =>
     characterTransitions[character.name] || defaultTransition;
 
@@ -170,21 +164,14 @@ export default function RightSection({
             </div>
 
             <div className="flex items-center md:hidden">
-              <Image
-                src={bgChat[character.name]}
-                width={480}
-                height={480}
-                alt=""
-                className="h-auto w-[25vw] transition-all hover:opacity-50"
-              />
-              {/* <div
+              <div
                 className={cn(
                   "border-1 rounded-full border-black px-4 py-2 transition-all hover:opacity-50",
                   charBgColor[character.name],
                 )}
               >
                 <p className="font-inter text-sm text-black">{`Chat ${character.name}`}</p>
-              </div> */}
+              </div>
               <div className="w-2 border-2 border-b border-black" />
               <button
                 className="transition-all hover:scale-125"
@@ -229,17 +216,6 @@ export default function RightSection({
             />
             <div className="absolute left-4 top-3 md:left-[1.6vw] md:top-[1.2vw]">
               <WalletIcon className="h-[16px] w-auto text-black md:h-[1.6vw]" />
-            </div>
-
-            <div className="absolute right-4 top-3 md:right-[1.6vw] md:top-[1.2vw]">
-              {/* <WalletIcon className="h-[16px] w-auto text-black md:h-[1.6vw]" /> */}
-              <Image
-                src={"/assets/chatbot/cursor.png"}
-                width={480}
-                height={480}
-                alt=""
-                className="h-[16px] w-auto text-black md:h-[1.6vw]"
-              />
             </div>
             <AnimatePresence>
               {walletAddress && !isLoading && !isResolvingENS && (

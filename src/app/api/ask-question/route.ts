@@ -34,6 +34,8 @@ export const POST = async (req: Request) => {
     )
     .join(", ");
 
+    console.log(historyString)
+
   
   const intentRecognizerPrediction = (await client.createPrediction({
     chatflowId: CHATFLOW_MAPPING.INTENT_RECOGNIZER,

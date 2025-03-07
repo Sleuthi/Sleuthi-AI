@@ -47,10 +47,10 @@ export const Section1 = () => {
   const nextOneCharClicked = () => setCharacter(getTransition().next);
   const nextTwoCharClicked = () => setCharacter(getTransition().nextTwo);
 
-  const bgChat = {
-    [hawk.name]: "/assets/characters/btn-chat-hawk.png",
-    [choco.name]: "/assets/characters/btn-chat-choco.png",
-    [river.name]: "/assets/characters/btn-chat-river.png",
+  const bgColorMap = {
+    [hawk.name]: "bg-[#D6FF38]",
+    [choco.name]: "bg-[#FF6B6B]",
+    [river.name]: "bg-[#81F495]",
   };
 
   const heroAsset = {
@@ -108,21 +108,14 @@ export const Section1 = () => {
 
           <div className="flex items-center">
             <Link href={"/chatbot"}>
-              <Image
-                src={bgChat[character.name]}
-                width={480}
-                height={480}
-                alt=""
-                className="h-auto w-[15vw] hover:animate-shake"
-              />
-              {/* <div
+              <div
                 className={cn(
                   "rounded-full border-[0.25vw] border-black px-[1.5vw] py-[1vw] hover:animate-shake",
                   bgColorMap[character.name],
                 )}
               >
                 <p className="font-inter text-[2vw] text-black">{`Chat ${character.name}`}</p>
-              </div> */}
+              </div>
             </Link>
             <div className="w-[2vw] border-[0.25vw] border-b border-black" />
             <Image
