@@ -12,7 +12,7 @@ export default async function Page({ searchParams }: PageProps) {
   const { walletAddress, character } = searchParams;
 
   const firstAskQuestion = getInitialMessage({
-    character: character ?? "Brown",
+    character: character ?? "Hawk",
     walletAddress,
   });
 
